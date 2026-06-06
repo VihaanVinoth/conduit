@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conduit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Conduit | Connect</h1>
+    </header>
+
+    <div id="login-container">
+        <div id="identity-stage">
+            <input type="text" id="nameInput" placeholder="Enter device location (e.g., Vert's iPad)">
+            <button id="requestCodeButton">Request Security Token</button>
+        </div>
+        
+        <div id="verification-stage" style="display: none; margin-top: 10px;">
+            <p style="font-size: 14px; margin-bottom: 15px; color: #a4b0be;">Enter the 6-digit authorization code dispatched to your system security dashboard:</p>
+            <input type="text" id="codeInput" placeholder="Enter 6-Digit Passcode" maxlength="6" style="text-align: center;">
+            <button id="joinButton">Establish Secure Link</button>
+        </div>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <div class="layout">
+            <div class="contacts-panel">
+                <h3>Active Stations</h3>
+                <ul id="contactsList"></ul>
+            </div>
+
+            <div class="intercom-panel">
+                <div class="status-card">
+                    <div id="connectionStatus">TX Ready</div>
+                    <div id="activeUserCircle" class="avatar-circle">🎙️</div>
+                </div>
+                
+                <video id="localVideo" autoplay muted playsinline style="width: 120px; background: #000; border-radius: 8px; margin-bottom: 10px; transform: scaleX(-1);"></video>
+                <video id="remoteVideo" autoplay playsinline style="width: 100%; max-width: 400px; background: #000; border-radius: 12px; min-height: 200px;"></video>
+
+                <div class="controls">
+                    <button id="muteButton" class="control-btn btn-mute">🎤 Mute Mic</button>
+                    <button id="cameraButton" class="control-btn btn-camera">📷 Kill Video</button>
+                    <button id="endButton" class="control-btn btn-end" style="display: none;">🛑 End Call</button>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="status-footer">
+            <div class="footer-item">
+                <span class="status-indicator disconnected" id="statusIndicator"></span> 
+                <span id="networkStatusText">Connecting to server...</span>
+            </div>
+            <div class="footer-item">
+                <span class="id-label">Device Station ID:</span> 
+                <span id="myStationId" class="id-badge">------</span>
+            </div>
+        </div>
+    </div> 
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
