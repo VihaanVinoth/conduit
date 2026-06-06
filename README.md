@@ -68,8 +68,8 @@ RECEIVER_EMAIL=target_receiver_email@domain.com
 
 <br>
 
-> [!TIP] **Gmail SMTP Passwords**: 
-> If using a personal Gmail account, `SMTP_PASS` cannot be your standard account password. Go to your **Google Account -> Security -> 2-Step Verification -> App Passwords** to generate a dedicated 16-character application token.
+> [!TIP]  
+> **Gmail SMTP Passwords** <br> If using a personal Gmail account, `SMTP_PASS` cannot be your standard account password. Go to your **Google Account -> Security -> 2-Step Verification -> App Passwords** to generate a dedicated 16-character application token.
 
 <br>
 
