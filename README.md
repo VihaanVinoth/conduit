@@ -93,8 +93,8 @@ The easiest way to generate local certificates is using `mkcert`:
 
 ```https://localhost:3000```
 
-> [!WARNING] **Handle Browser Certificate**: 
-> Since the certificate is self-generated for local testing, your browser may flag it. Simply click **"Advanced"** and select **"Proceed to localhost (unsafe)"** to bypass the warning.
+> [!WARNING] 
+> **Handle Browser Certificate**: <br> Since the certificate is self-generated for local testing, your browser may flag it. Simply click **"Advanced"** and select **"Proceed to localhost (unsafe)"** to bypass the warning.
 
 <br>
 
